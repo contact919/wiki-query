@@ -1,0 +1,65 @@
+<!--pages/home/book/search.wxml-->
+<view class="page__bd">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索图书" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{sub.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索图书</view>
+        </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+  <view class="weui-cells searchbar-result" wx:if="{{sub.length > 0}}">
+    <block wx:for="{{sub}}" wx:key="key" >
+      <navigator url="/pages/home/book/detail?id={{item.id}}" class="weui-cell" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+              <view>
+                  <view class='v-box'>
+                    <image src="{{item.images.small}}" class='img-size'></image>
+                    <view class='com-title'>{{item.title}} {{item.pubdate}}</view>
+                    <view class='org-title'>{{item.author}}</view>
+                  </view>
+              </view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </block>
+  </view>
+  <!-- flex小组件 -->
+  <view class='page pre-flex-marb' wx-if="{{!inputVal}}">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+          <navigator url="/pages/home/book/detail?id=1034282" class="weui-flex__item pre-link">
+            <view class="placeholder">时间简史</view>
+          </navigator>   
+          <navigator url="/pages/home/book/detail?id=25862578" class="weui-flex__item pre-link">
+            <view class="placeholder">解忧杂货店</view>
+          </navigator>   
+          <navigator url="/pages/home/book/detail?id=1022060" class="weui-flex__item pre-link">
+            <view class="placeholder">狼图腾</view>
+          </navigator>   
+        </view>
+        <view class="weui-flex">
+          <navigator url="/pages/home/book/detail?id=1246192" class="weui-flex__item pre-link">
+            <view class="placeholder">Java</view>
+          </navigator>   
+          <navigator url="/pages/home/book/detail?id=1474773" class="weui-flex__item pre-link">
+            <view class="placeholder">海贼王</view>
+          </navigator>   
+          <navigator url="/pages/home/book/detail?id=10564562" class="weui-flex__item pre-link">
+            <view class="placeholder">普京传</view>
+          </navigator>  
+          <navigator url="/pages/home/book/detail?id=26972184" class="weui-flex__item pre-link">
+            <view class="placeholder">UI</view>
+          </navigator>   
+        </view>
+    </view>
+  </view>
+</view>

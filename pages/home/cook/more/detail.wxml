@@ -1,0 +1,47 @@
+<!--pages/home/cook/more/detail.wxml-->
+<!--pages/log/cook/detail.wxml-->
+<view class="page__bd">
+  <view class="weui-loadmore" wx-if="{{loading}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">拼命加载中...</view>
+  </view>
+  <view class="weui-panel weui-panel_access" wx-if="{{!loading}}">
+    <view class="weui-media-box weui-media-box_text" id='more-word-co'>{{sub.name}}</view>
+    <view class='preimg'><image src="{{sub.pic}}" /></view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">简介</view>
+        <view class="weui-media-box__desc short-detail">{{sub.content}}</view>
+      </view>
+      <view class="weui-media-box">
+        <view class="weui-media-box__title weui-media-box__title_in-text">时间与份量</view>
+        <ul class="pre-ul">
+          <li class='make-time'><view class='li-fl'>制作时间</view><view class='li-fr'>{{sub.cookingtime}}</view></li>
+          <li class='pre-comm'><view class='li-fl'>用餐人数</view><view class='li-fr'>{{sub.peoplenum}}</view></li>
+        </ul>
+      </view>
+      <view class="weui-media-box" id="bor-top">
+        <view class="weui-media-box__title weui-media-box__title_in-text">食材</view>
+        <ul class="pre-ul"> 
+        <block wx:for="{{sub.material}}" wx:key="key" >
+          <li class='pre-comm'><view class='li-fl'>{{item.mname}}</view><view class='li-fr'>{{item.amount}}</view></li>
+         </block>   
+        </ul>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel weui-panel_access detail-mb" wx-if="{{!loading}}">
+    <view class="weui-media-box weui-media-box_text">步骤</view>
+    <view class="weui-panel__bd" wx:for="{{sub.process}}" wx:key="key">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{item.pic}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="pre-title">{{index+1}}. {{item.pcontent}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/index/index",
+    "pages/index/detail",
+    "pages/home/movie/search",
+    "pages/home/book/search",
+    "pages/home/book/detail",
+    "pages/home/cook/search",
+    "pages/home/cook/detail",
+    "pages/home/cook/more/detail",
+    "pages/home/robot/robot"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+"tabBar": {
+  "color": "#a9b7b7",
+  "selectedColor": "#62b900",
+  "borderStyle": "white",
+  "list": [
+    {
+      "pagePath": "pages/home/home",
+      "selectedIconPath": "pages/image/home1.png",
+      "iconPath": "pages/image/home.png",
+      "text": "主页"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "selectedIconPath": "pages/image/movie1.png",
+      "iconPath": "pages/image/movie.png",
+      "text": "电影"
+    }
+    
+  ]
+}
+}

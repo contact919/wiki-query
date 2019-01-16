@@ -1,0 +1,102 @@
+<!--pages/index/index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{navbar}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{currentTab == index ? 'weui-bar__item_on' : ''}}" bindtap="navbarTap">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-loadmore" wx-if="{{loading}}">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips">拼命加载中...</view>
+        </view>
+        <!-- 正在热映 -->
+        <view class="weui-tab__content" hidden="{{currentTab!=0}}">
+          <block wx:for="{{now}}" wx:key="key" >
+          <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">{{index+1}}. {{item.title}} <block wx-if="{{item.title!=item.original_title}}">{{item.original_title}}</block> ({{item.year}})</view>
+            <view class="weui-panel__bd">
+              <navigator url="/pages/index/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                  <image class="weui-media-box__thumb" src="{{item.images.large}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__desc">导演: {{item.directors[0].name}}</view>
+                  <view class="weui-media-box__desc">主演:
+                    <block wx:for="{{item.casts}}" wx:key="key" >{{item.name}}</block>
+                  </view>
+                  <view class="weui-media-box__desc">类型:
+                    <block wx:for="{{item.genres}}" wx:key="key" >{{item}}/</block>
+                  </view>
+                  <view class="weui-media-box__desc">豆瓣评分: {{item.rating.average}}</view>
+                </view>
+              </navigator> 
+            </view>
+            <!-- <view class="weui-panel__ft">
+                <view class="weui-cell weui-cell_access weui-cell_link">
+                    <view class="weui-cell__bd">查看更多</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </view>
+            </view> -->
+          </view>
+          </block>
+        </view>
+        <!-- 即将上映 -->
+        <view class="weui-tab__content" hidden="{{currentTab!=1}}">
+          <block wx:for="{{next}}" wx:key="key" >
+          <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">{{index+1}}. {{item.title}} <block wx-if="{{item.title!=item.original_title}}">{{item.original_title}}</block> ({{item.year}})</view>
+            <view class="weui-panel__bd">
+              <navigator url="/pages/index/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                  <image class="weui-media-box__thumb" src="{{item.images.large}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__desc">导演: {{item.directors[0].name}}</view>
+                  <view class="weui-media-box__desc">主演:
+                    <block wx:for="{{item.casts}}" wx:key="key" >{{item.name}}</block>
+                  </view>
+                  <view class="weui-media-box__desc">类型:
+                    <block wx:for="{{item.genres}}" wx:key="key" >{{item}}/</block>
+                  </view>
+                  <view class="weui-media-box__desc">豆瓣评分: {{item.rating.average}}</view>
+                </view>
+              </navigator> 
+            </view>
+          </view>
+          </block>
+        </view>
+        <!-- top100 -->
+        <view class="weui-tab__content" hidden="{{currentTab!=2}}">
+          <block wx:for="{{sub}}" wx:key="key" >
+          <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">No.{{index+1}} {{item.title}} <block wx-if="{{item.title!=item.original_title}}">{{item.original_title}}</block> ({{item.year}})</view>
+            <view class="weui-panel__bd">
+              <navigator url="/pages/index/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                  <image class="weui-media-box__thumb" src="{{item.images.large}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__desc">导演: {{item.directors[0].name}}</view>
+                  <view class="weui-media-box__desc">主演:
+                    <block wx:for="{{item.casts}}" wx:key="key" >{{item.name}}</block>
+                  </view>
+                  <view class="weui-media-box__desc">类型:
+                    <block wx:for="{{item.genres}}" wx:key="key" >{{item}}/</block>
+                  </view>
+                  <view class="weui-media-box__desc">豆瓣评分: {{item.rating.average}}</view>
+                </view>
+              </navigator> 
+            </view>
+          </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

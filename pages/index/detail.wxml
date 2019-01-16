@@ -1,0 +1,29 @@
+<!--pages/index/detail.wxml-->
+<view class="container">
+  <view class="weui-loadmore" wx-if="{{loading}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">拼命加载中...</view>
+  </view>
+  <view class='box' wx-if="{{!loading}}">
+    <view class='mv-title'>{{title}} <block wx-if="{{title!=sub.original_title}}">{{sub.original_title}}</block></view>
+    <view class='rt-size'>
+      <image src="{{sub.images.large}}" class='img-size'></image>
+      <block>
+        <view wx:if="{{sub.directors!=''}}">导演: {{sub.directors[0].name}}</view>
+        <view wx:if="{{sub.casts!=''}}">主演:
+          <block wx:for="{{sub.casts}}" wx:key="key" >{{item.name}}</block>
+        </view>
+        <view wx:if="{{sub.genres}}">类型:
+          <block wx:for="{{sub.genres}}" wx:key="key" >{{item}}/</block>
+        </view>
+        <view>制片国家: {{sub.countries[0]}}</view> 
+        <view wx:if="{{sub.year}}">上映年份: {{sub.year}}</view> 
+        <view wx:if="{{sub.aka!=''}}">又名: {{sub.aka}}</view> 
+        <view>豆瓣评分: {{sub.rating.average}}</view>
+        <view>已有: {{sub.ratings_count}}人评价</view>
+        <view class='distro' wx:if="{{sub.summary}}">{{title}}的剧情简介...... </view>
+        <view class='distro-content tx-ident'>{{sub.summary}}</view>
+      </block>
+    </view>  
+  </view>
+</view>

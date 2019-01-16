@@ -1,0 +1,67 @@
+<!--pages/home/cook/search.wxml-->
+<view class="page__bd">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索菜谱" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{sub.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>  
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索菜谱</view>
+        </label>
+    </view> 
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+  <view class="weui-cells searchbar-result" wx:if="{{sub.length > 0}}">
+    <block wx:for="{{sub}}" wx:key="key" >
+      <navigator url="/pages/home/cook/detail?id={{item.id}}&val={{inputVal}}" class="weui-cell" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+              <view>
+                  <view class='v-box'>
+                    <image src="{{item.pic}}" class='img-size'></image>
+                    <view class='com-title'>{{item.name}} {{item.pubdate}}</view>
+                    <view class='org-title'>{{item.cookingtime}}</view>
+                    <view class='org-title'>{{item.tag}}</view>
+                  </view>
+              </view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </block>
+  </view>
+  <!-- flex小组件 -->
+  <view class='page pre-flex-marb' wx-if="{{!inputVal}}">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+          <navigator url="/pages/home/cook/detail?id=1583&val=酸菜鱼" class="weui-flex__item pre-link">
+            <view class="placeholder">酸菜鱼</view>
+          </navigator>   
+          <navigator url="/pages/home/cook/detail?id=969&val=麻婆豆腐" class="weui-flex__item pre-link">
+            <view class="placeholder">麻婆豆腐</view>
+          </navigator>   
+          <navigator url="/pages/home/cook/detail?id=936&val=红烧肉" class="weui-flex__item pre-link">
+            <view class="placeholder">红烧肉</view>
+          </navigator>   
+        </view>
+        <view class="weui-flex">
+          <navigator url="/pages/home/cook/detail?id=4939&val=糖醋带鱼" class="weui-flex__item pre-link">
+            <view class="placeholder">糖醋带鱼</view>
+          </navigator>   
+          <navigator url="/pages/home/cook/detail?id=4305&val=松子玉米" class="weui-flex__item pre-link">
+            <view class="placeholder">松子玉米</view>
+          </navigator>   
+          <navigator url="/pages/home/cook/detail?id=5429&val=干锅虾" class="weui-flex__item pre-link">
+            <view class="placeholder">干锅虾</view>
+          </navigator>  
+          <navigator url="/pages/home/cook/detail?id=2835&val=酸奶蛋糕" class="weui-flex__item pre-link">
+            <view class="placeholder">酸奶蛋糕</view>
+          </navigator>   
+        </view>
+    </view>
+  </view>
+</view>
+

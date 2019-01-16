@@ -1,0 +1,62 @@
+/* pages/home/cook/more/detail.wxss */
+.preimg{
+  display: block;
+  width:600rpx;
+  height: 400rpx;
+  padding:12px 15px 12px;
+  overflow: hidden;
+  margin:0 auto;
+  background: #8d8239;
+}
+.preimg image{
+  display: block;
+  width:600rpx;
+  height: 400rpx;
+}
+.pre-ul{
+  display: block;
+  width: auto;
+  height:68rpx;
+}
+.make-time,.pre-comm{
+  display: block;
+  float: left;
+  width: 254rpx;
+  height:66rpx;
+  padding: 0 8px;
+  overflow: hidden;
+  line-height: 66rpx;
+  font-size: 12px;
+  border:1px solid #e9e9e9;
+}
+.pre-comm{
+  margin-left:-1px; 
+  margin-bottom: -1px;
+}
+.li-fl{
+  float: left;
+}
+.li-fr{
+  float: right;
+}
+#bor-top:before{
+  border-top:none;
+}
+.pre-title{
+  font-size:12px;
+  width:auto;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-wrap:normal;
+  word-break:break-all;
+}
+.detail-mb{
+  margin-bottom: 10px;
+}
+.short-detail{
+  padding-bottom: 5px;
+  text-indent: 2em;
+}
+#more-word-co{
+  color: #827100;
+}

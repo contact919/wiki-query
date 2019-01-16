@@ -1,0 +1,36 @@
+/* pages/log/book/detail.wxss */
+.container{
+  margin:0 30rpx;
+}
+.rt-size{
+  font-size: 30rpx;
+}
+.box{
+  width: 700rpx;
+  margin:20rpx 5rpx;
+}
+.img-size{
+  display: block;
+  padding:12px 15px 12px;
+  margin:0 auto;
+  width: 640rpx;
+  height: 480rpx;
+}
+.mv-title{
+  color:#5d513c;
+  font-size: 32rpx;
+}
+.distro{
+  color:#007722;
+  font-size: 32rpx;
+}
+.distro-content{
+  color: #111;
+  font-size: 26rpx;
+}
+view{
+  margin:12rpx 0;
+}
+.tx-ident{
+  text-indent: 2em;
+}

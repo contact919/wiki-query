@@ -1,0 +1,34 @@
+<!--pages/log/book/detail.wxml-->
+<view class="container">
+  <view class="weui-loadmore" wx-if="{{loading}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">拼命加载中...</view>
+  </view>
+  <view class='box' wx-if="{{!loading}}">
+    <view class='mv-title'>{{title}} {{sub.original_title}}</view>
+    <view class='rt-size'>
+      <image src="{{sub.images.small}}" class='img-size'></image>
+      <block>
+        <view>作者:{{sub.author}}</view>
+        <view wx:if="{{sub.publisher}}">出版社: {{sub.publisher}}</view> 
+        <view wx:if="{{sub.subtitle}}">副标题: {{sub.subtitle}}</view> 
+        <view wx:if="{{sub.translator!=''}}">译者: {{sub.translator}}</view> 
+        <view wx:if="{{sub.pubdate}}">出版年: {{sub.pubdate}}</view> 
+        <view wx:if="{{sub.pages}}">页数: {{sub.pages}}</view> 
+        <view wx:if="{{sub.price}}">定价: {{sub.price}}</view> 
+        <view wx:if="{{sub.binding}}">装帧: {{sub.binding}}</view> 
+        <view wx:if="{{sub.series.title}}">丛书: {{sub.series.title}}</view> 
+        <view wx:if="{{sub.rating.average}}">豆瓣评分: {{sub.rating.average}}</view>
+        <view>已有: {{sub.rating.numRaters}}人评价</view>
+        <view>ISBN: {{sub.isbn13}}</view>
+        <view class='distro'  wx:if="{{sub.summary}}">内容简介...... </view>
+        <view class='distro-content tx-ident'>{{sub.summary}}</view>
+        <view class='distro' wx:if="{{sub.author_intro}}">作者简介...... </view>
+        <view class='distro-content tx-ident'>{{sub.author_intro}}</view>
+        <view class='distro' wx:if="{{sub.catalog}}">目录...... </view>
+        <view class='distro-content'><text>{{sub.catalog}}</text></view>
+      </block>
+    </view>  
+  </view>
+</view>
+

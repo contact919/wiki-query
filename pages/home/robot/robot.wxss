@@ -1,0 +1,104 @@
+/* pages/home/robot/robot.wxss */
+page{
+  height: 100%;
+}
+.container {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 15rpx 15rpx;
+   background-color: #dcd3b2; 
+}
+
+.chat-list {
+  flex: 1;
+  padding-bottom: 80rpx;
+}
+
+.scrool-view {
+}
+
+.chat-left {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.chat-left text {
+  flex: 1;
+  margin-left: 10rpx;
+  padding: 10rpx 5rpx;
+  background-color: #eee;
+  border-radius: 15rpx;
+  word-break: break-all;
+}
+
+.chat-right {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.chat-right text {
+  flex: 1;
+  margin-right: 10rpx;
+  padding: 10rpx 5rpx;
+  background-color: #a7ca61;
+  border-radius: 15rpx;
+  word-break: break-all;
+}
+
+.avatar-img {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 70rpx;
+}
+
+.ask-input-word {
+  width: 96%;
+  position: fixed;
+  padding: 5rpx;
+  bottom: 5rpx;
+  display: flex;
+  align-items: center;
+}
+
+.ask-input-word input {
+  background: white;
+  border-radius: 15rpx;
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+button{
+  float: right;
+  width: 18%;
+  font-size: 14px;
+  line-height: 36px;
+  touch-action: center;
+}
+.inp-v{
+  float: left;
+  width:78%;
+  height: 35px;
+  padding-left: 8px;
+  background: #efefef;
+  border-radius: 5px ;
+  border: 1px solid #ccc;
+}
+.inp-pos{
+  position: fixed;
+  width:100%;
+  left:0;
+  bottom:6px;
+  margin-bottom: 5px;
+}

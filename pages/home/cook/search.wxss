@@ -1,0 +1,57 @@
+/* pages/log/cook/search.wxss */
+.box{
+  width: 700rpx;
+  margin:0 auto;
+}
+.inp-search{
+  display: inline-block;
+  width: 550rpx;
+  height: 80rpx;
+  color: #666;
+  border:2rpx solid #ddd;
+  font-size: 32rpx;
+  text-indent: 20rpx;
+}
+.btn{
+  display: inline-block;
+  height: 84rpx;
+  margin: 0 auto;
+}
+.img-size{
+  display: block;
+  float: left;
+  width: 120rpx;
+  height: 160rpx;
+  margin-right: 26rpx;
+}
+.v-box{
+  height: 160rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+.com-title{
+  font-size: 29rpx;
+  color:#369;
+  margin-bottom: 18rpx;
+}
+.org-title{
+  font-size: 32rpx;
+  color:#999;
+  line-height: 1.7;
+}
+/* flex组件 */
+.placeholder {
+  padding:0 5px;
+  text-align:center;
+  background-color:#f8f8f8;
+  height:2em;
+  line-height:2em;
+  color:#cfcfcf;
+  font-size: 12px;
+}
+.pre-link{
+  margin:5px;
+}
+.pre-flex-marb{
+  margin-top: 15px;
+}

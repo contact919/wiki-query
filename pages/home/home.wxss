@@ -1,0 +1,13 @@
+/* pages/home/home.wxss */
+.swiper {
+  height: 400rpx;
+  width: 100%;
+  margin-bottom: 50rpx;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+#rob-wd{
+  width: 100%;
+}
